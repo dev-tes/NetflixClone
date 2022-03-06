@@ -7,11 +7,16 @@
 
 import UIKit
 
-class MainTabBarViewController: UIViewController {
+class MainTabBarViewController: UITabBarController {
 
+    let viewController1 = UINavigationController(rootViewController: HomeViewController())
+    let viewController2 = UINavigationController(rootViewController: UpcomingViewController())
+    let viewController3 = UINavigationController(rootViewController: SearchViewController())
+    let viewController4 = UINavigationController(rootViewController: DownloadsViewController())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemBlue
+        setViewControllers([viewController1,viewController2,viewController3,viewController4], animated: true)
     }
 }
-
