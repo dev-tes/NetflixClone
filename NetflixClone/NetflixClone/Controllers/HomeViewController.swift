@@ -14,7 +14,18 @@ class HomeViewController: UIViewController {
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
         return table
     }()
-
+    
+    let imageView: UIImageView = {
+        let iv = UIImageView()
+        var image = UIImage(named: "netflixLogo")
+        image = image?.withRenderingMode(.alwaysOriginal)
+        iv.image = image
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        iv.heightAnchor.constraint(equalToConstant: 38).isActive = true
+        return iv
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -34,9 +45,15 @@ class HomeViewController: UIViewController {
     }
     
     private func configureNavBar() {
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(image:  UIImage(systemName: "person"), style: .done, target: self, action: nil),
+            UIBarButtonItem(image:  UIImage(systemName: "play.rectangle"), style: .done, target: self, action: nil)
+        ]
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: imageView)
+        navigationController?.navigationBar.tintColor = .white
     }
-
+    
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
