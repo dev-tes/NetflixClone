@@ -20,6 +20,7 @@
 		04340E4E27D50530009815CB /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340E4D27D50530009815CB /* UpcomingViewController.swift */; };
 		04340E5027D5055F009815CB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340E4F27D5055F009815CB /* SearchViewController.swift */; };
 		04340E5227D50591009815CB /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340E5127D50591009815CB /* DownloadsViewController.swift */; };
+		04A168AD27DFFB2D00D32F24 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A168AC27DFFB2D00D32F24 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		04340E4D27D50530009815CB /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		04340E4F27D5055F009815CB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		04340E5127D50591009815CB /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
+		04A168AC27DFFB2D00D32F24 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		0407E41C27D9325400EA9A8B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				04A168AC27DFFB2D00D32F24 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				0407E42127D9679600EA9A8B /* HeroHeaderUIView.swift in Sources */,
 				04340E5227D50591009815CB /* DownloadsViewController.swift in Sources */,
 				04340E3727D50150009815CB /* AppDelegate.swift in Sources */,
+				04A168AD27DFFB2D00D32F24 /* Extensions.swift in Sources */,
 				04340E3927D50150009815CB /* SceneDelegate.swift in Sources */,
 				04340E4E27D50530009815CB /* UpcomingViewController.swift in Sources */,
 				0407E42927DD551E00EA9A8B /* Movie.swift in Sources */,
