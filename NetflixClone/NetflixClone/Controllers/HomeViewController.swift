@@ -57,8 +57,12 @@ class HomeViewController: UIViewController {
 //            }
 //        }
         
-        APICaller.shared.getTrendingTvs { results in
-        }
+//        APICaller.shared.getTrendingTvs { results in
+//        }
+        
+        APICaller.shared.getUpcomingMovies(completion: { results in
+            
+        })
     }
     
     private func configureNavBar() {
