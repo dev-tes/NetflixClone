@@ -11,6 +11,7 @@
 		0407E42127D9679600EA9A8B /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407E42027D9679600EA9A8B /* HeroHeaderUIView.swift */; };
 		0407E42727DC14DE00EA9A8B /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407E42627DC14DE00EA9A8B /* APICaller.swift */; };
 		0407E42927DD551E00EA9A8B /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407E42827DD551E00EA9A8B /* Title.swift */; };
+		041F9F4E28047276000C9F25 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F9F4D28047276000C9F25 /* TitleCollectionViewCell.swift */; };
 		04340E3727D50150009815CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340E3627D50150009815CB /* AppDelegate.swift */; };
 		04340E3927D50150009815CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340E3827D50150009815CB /* SceneDelegate.swift */; };
 		04340E3B27D50150009815CB /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04340E3A27D50150009815CB /* MainTabBarViewController.swift */; };
@@ -28,6 +29,7 @@
 		0407E42027D9679600EA9A8B /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
 		0407E42627DC14DE00EA9A8B /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		0407E42827DD551E00EA9A8B /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
+		041F9F4D28047276000C9F25 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		04340E3327D50150009815CB /* NetflixClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04340E3627D50150009815CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04340E3827D50150009815CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				0407E41E27D9329F00EA9A8B /* CollectionViewTableViewCell.swift */,
 				0407E42027D9679600EA9A8B /* HeroHeaderUIView.swift */,
+				041F9F4D28047276000C9F25 /* TitleCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04340E5027D5055F009815CB /* SearchViewController.swift in Sources */,
+				041F9F4E28047276000C9F25 /* TitleCollectionViewCell.swift in Sources */,
 				04340E3B27D50150009815CB /* MainTabBarViewController.swift in Sources */,
 				0407E41F27D9329F00EA9A8B /* CollectionViewTableViewCell.swift in Sources */,
 				0407E42727DC14DE00EA9A8B /* APICaller.swift in Sources */,
