@@ -8,6 +8,6 @@
 import Foundation
 
 struct TitleViewModel {
-    let posterURL: String
     let titleName: String
+    let posterURL: String
 }
