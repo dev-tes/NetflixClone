@@ -43,10 +43,8 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell else { return UICollectionViewCell()
         }
-        cell.backgroundColor = .blue
-        
+        let title = titles[indexPath.row]
+        cell.configure(with: title.posterPath ?? ""  )
         return cell
     }
-    
-    
 }
