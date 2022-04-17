@@ -28,6 +28,7 @@
 		049FD2CF280B187C003E58C5 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FD2CE280B187C003E58C5 /* SearchResultsViewController.swift */; };
 		049FD2D5280C55F0003E58C5 /* YoutubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FD2D4280C55F0003E58C5 /* YoutubeSearchResponse.swift */; };
 		049FD2D7280C5C55003E58C5 /* TitlePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FD2D6280C5C55003E58C5 /* TitlePreviewViewController.swift */; };
+		049FD2D9280C6FFB003E58C5 /* TitlePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FD2D8280C6FFB003E58C5 /* TitlePreviewViewModel.swift */; };
 		04A168AD27DFFB2D00D32F24 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A168AC27DFFB2D00D32F24 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		049FD2CE280B187C003E58C5 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		049FD2D4280C55F0003E58C5 /* YoutubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResponse.swift; sourceTree = "<group>"; };
 		049FD2D6280C5C55003E58C5 /* TitlePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewController.swift; sourceTree = "<group>"; };
+		049FD2D8280C6FFB003E58C5 /* TitlePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewModel.swift; sourceTree = "<group>"; };
 		04A168AC27DFFB2D00D32F24 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				049FD2CC280A2C0F003E58C5 /* TitleViewModel.swift */,
+				049FD2D8280C6FFB003E58C5 /* TitlePreviewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				04A168AD27DFFB2D00D32F24 /* Extensions.swift in Sources */,
 				049FD2D5280C55F0003E58C5 /* YoutubeSearchResponse.swift in Sources */,
 				04340E3927D50150009815CB /* SceneDelegate.swift in Sources */,
+				049FD2D9280C6FFB003E58C5 /* TitlePreviewViewModel.swift in Sources */,
 				04340E4E27D50530009815CB /* UpcomingViewController.swift in Sources */,
 				049FD2D7280C5C55003E58C5 /* TitlePreviewViewController.swift in Sources */,
 				0407E42927DD551E00EA9A8B /* Title.swift in Sources */,
