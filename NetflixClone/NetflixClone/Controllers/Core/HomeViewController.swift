@@ -51,6 +51,8 @@ class HomeViewController: UIViewController {
             //
         }
         
+        navigationController?.pushViewController(TitlePreviewViewController(), animated: true)
+        
     }
     
     override func viewDidLayoutSubviews() {

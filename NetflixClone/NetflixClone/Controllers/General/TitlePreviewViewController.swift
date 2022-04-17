@@ -36,7 +36,11 @@ class TitlePreviewViewController: UIViewController {
         return button
     }()
     
-    private let webView = WKWebView()
+    private let webView: WKWebView = {
+        let view = WKWebView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(webView)
@@ -49,9 +53,10 @@ class TitlePreviewViewController: UIViewController {
     
     func configureConstraints() {
         let webviewConstraint = [
-            webView.topAnchor.constraint(equalTo: view.topAnchor),
+            webView.topAnchor.constraint(equalTo: view.topAnchor,constant: 50),
             webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            webView.heightAnchor.constraint(equalToConstant: 250)
         ]
         
         let titleLabelConstraint = [
@@ -62,12 +67,18 @@ class TitlePreviewViewController: UIViewController {
         let overviewLabelConstraint = [
             overviewLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 15),
             overviewLabel.leadingAnchor.constraint(equalTo:  view.leadingAnchor, constant: 20)
-            
+        ]
+        
+        let downloadButtonConstraint = [
+            downloadButton.topAnchor.constraint(equalTo: overviewLabel.bottomAnchor,constant: 25),
+            downloadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+             
         ]
         
         NSLayoutConstraint.activate(webviewConstraint)
         NSLayoutConstraint.activate(titleLabelConstraint)
         NSLayoutConstraint.activate(overviewLabelConstraint)
+        NSLayoutConstraint.activate(downloadButtonConstraint)
     }
     
 }
