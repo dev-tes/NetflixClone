@@ -85,11 +85,11 @@ class HeroHeaderUIView: UIView {
         heroImageView.sd_setImage(with: url, completed: nil)
     }
     
-//    public func configure(with model: Title){
-//        guard let posterPath = model.posterPath else { return }
-//        let url = URL(string: posterPath)
-//        heroImageView.sd_setImage(with: url, completed: nil)
-//    }
+    public func configure(with model: Title){
+        guard let posterPath = model.posterPath else { return }
+        let url = URL(string: posterPath)
+        heroImageView.sd_setImage(with: url, completed: nil)
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

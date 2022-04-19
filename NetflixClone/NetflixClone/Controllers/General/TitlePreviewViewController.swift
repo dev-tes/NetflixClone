@@ -78,7 +78,6 @@ class TitlePreviewViewController: UIViewController {
             downloadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             downloadButton.widthAnchor.constraint(equalToConstant: 140),
             downloadButton.heightAnchor.constraint(equalToConstant: 40)
-
         ]
         
         NSLayoutConstraint.activate(webviewConstraint)
