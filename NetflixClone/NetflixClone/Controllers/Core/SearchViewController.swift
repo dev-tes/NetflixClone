@@ -107,7 +107,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension SearchViewController: UISearchResultsUpdating {
+extension SearchViewController: UISearchResultsUpdating, SearchResultsViewControllerDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         
@@ -116,17 +116,25 @@ extension SearchViewController: UISearchResultsUpdating {
               query.trimmingCharacters(in: .whitespaces).count >= 3,
               let resultController = searchController.searchResultsController as? SearchResultsViewController else { return
               }
+        resultController.delegate = self
         APICaller.shared.search(with: query) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let titles):
                     resultController.titles = titles
-                    resultController.searchResultCollectionView.reloadData() 
-                    print(titles)
+                    resultController.searchResultCollectionView.reloadData()
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
             }
+        }
+    }
+    
+    func searchResultsViewControllerDidTapItem(_ viewModel: TitlePreviewViewModel) {
+        DispatchQueue.main.async { [weak self] in
+            let vc = TitlePreviewViewController()
+            vc.configure(with: viewModel)
+            self?.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

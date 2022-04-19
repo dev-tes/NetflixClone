@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol SearchResultsViewControllerDelegate: AnyObject {
+    func searchResultsViewControllerDidTapItem(_ viewModel: TitlePreviewViewModel)
+}
+
 class SearchResultsViewController: UIViewController {
     
     var titles = [Title]()
+    
+    public weak var delegate: SearchResultsViewControllerDelegate?
     
     let searchResultCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -19,7 +25,7 @@ class SearchResultsViewController: UIViewController {
         collectionView.register(TitleCollectionViewCell.self, forCellWithReuseIdentifier: TitleCollectionViewCell.identifier)
         return collectionView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -28,7 +34,7 @@ class SearchResultsViewController: UIViewController {
         searchResultCollectionView.delegate = self
         searchResultCollectionView.dataSource = self
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         searchResultCollectionView.frame = view.bounds
@@ -46,5 +52,20 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
         let title = titles[indexPath.row]
         cell.configure(with: title.posterPath ?? ""  )
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let title = titles[indexPath.row]
+        guard let titleName = title.originalTitle ?? title.originalName else { return }
+        APICaller.shared.getMovie(with: titleName) { [weak self] result in
+            switch result {
+            case .success(let videoElement):
+                let titlePreviewViewModel = TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverView: title.overview ?? "")
+                self?.delegate?.searchResultsViewControllerDidTapItem(titlePreviewViewModel)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
