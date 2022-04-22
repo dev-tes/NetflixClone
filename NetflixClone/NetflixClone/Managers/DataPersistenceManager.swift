@@ -14,6 +14,7 @@ class DataPersistenceManager {
     enum DatabaseError: Error {
         case failedToSaveData
         case failedToFetchData
+        case failedToDeleteData
     }
     
     static let shared = DataPersistenceManager()
@@ -55,6 +56,16 @@ class DataPersistenceManager {
         } catch {
             completion(.failure(DatabaseError.failedToFetchData))
             print(error.localizedDescription)
+        }
+    }
+    
+    func deleteItem(with model: TitleItem, completion: @escaping(Result<Void, Error>) -> Void) {
+        context.delete(model)
+        do {
+            try context.save()
+            completion(.success(()))
+        } catch {
+            completion(.failure(DatabaseError.failedToDeleteData))
         }
     }
 }
