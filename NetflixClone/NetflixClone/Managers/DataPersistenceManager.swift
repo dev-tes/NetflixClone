@@ -13,16 +13,19 @@ class DataPersistenceManager {
     
     enum DatabaseError: Error {
         case failedToSaveData
+        case failedToFetchData
     }
     
     static let shared = DataPersistenceManager()
     
+    private let appDelegate = UIApplication.shared.delegate as? AppDelegate ?? AppDelegate()
+    
+    lazy var context = {
+        return self.appDelegate.persistentContainer.viewContext
+    }()
+    
     func downloadTitle(with model: Title, completion: @escaping (Result<Void, Error>) -> Void){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
         
-        let context = appDelegate.persistentContainer.viewContext
         let item = TitleItem(context: context)
         item.id = Int64(model.id)
         item.mediaType = model.mediaType
@@ -39,6 +42,19 @@ class DataPersistenceManager {
             completion(.success(()))
         } catch {
             completion(.failure(DatabaseError.failedToSaveData))
+        }
+    }
+    
+    func fetchingTitlesFromDatabase(completion: @escaping(Result<[TitleItem], Error>) -> Void){
+        let request: NSFetchRequest<TitleItem>
+        request = TitleItem.fetchRequest()
+        
+        do {
+            let titles = try context.fetch(request)
+            completion(.success(titles))
+        } catch {
+            completion(.failure(DatabaseError.failedToFetchData))
+            print(error.localizedDescription)
         }
     }
 }
