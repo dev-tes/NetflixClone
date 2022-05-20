@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
     
     let imageView: UIImageView = {
         let iv = UIImageView()
-        var image = UIImage(named: "netflixLogo")
+        var image = UIImage(named: "NetflixLogo")
         image = image?.withRenderingMode(.alwaysOriginal)
         iv.image = image
         iv.translatesAutoresizingMaskIntoConstraints = false
